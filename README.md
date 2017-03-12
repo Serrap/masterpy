@@ -1,4 +1,4 @@
-# powerpy
+# masterpy
 Pipeline to estimate angular power spectra of masked Healpix maps. 
 Based on the Monte Carlo Apodized Spherical Transform EstomatoR (MASTER), 
 Hivon et al. (2001), see: https://arxiv.org/pdf/astro-ph/0105302.pdf
