@@ -1,20 +1,28 @@
 # masterpy
-Pipeline to estimate angular power spectra of masked Healpix maps. 
+Pipeline to estimate angular power spectra of masked all-sky maps in 
+Healpix format. 
 Based on the Monte Carlo Apodized Spherical Transform EstomatoR (MASTER), 
 Hivon et al. (2001), see: https://arxiv.org/pdf/astro-ph/0105302.pdf
 
-All python files are in /make_files/
+- Data files (input maps, masks, beams) must be in /data/
+- Python files are in /make_files/
+- Output files are in /RESULTS/
 
 Files:
 compute_cls.py:
-Main, interactive file to start the pipeline. It runs in python3.
-You must input the values for lmax (ex: lmax = 2048),
-the binning Delta required for the final output spectra
-(ex: Delta = 64), the name of the maps/masks files. All maps/mask
-must be in the directory /data.
-If the option 'auto' is selected it computes CIB auto-spectra (at 353, 545, 857 GHz).
-Selecting the option 'cross', it computes cross-spectra between CIB maps and
+Main, interactive file to run the pipeline in python3 
+but it's easy to make it compatible with python2.7.
+The code asks if you want to compute auto- or cross-power spectra.
+If the option 'auto' is selected it computes CIB auto-spectra from maps at 353, 545, 857 GHz.
+Selecting the option 'cross', it computes cross-spectra between the 3 CIB maps and
 a given tracer of the dark matter field (a lensing map in the standard case).
+
+You must input the values for lmax (ex: lmax = 2048),
+the binning l-Delta for the final output spectra
+(ex: Delta = 64), the name of the maps & masks files. 
+
+Maps names are given without the .fits extension and without the frequency value so
+if the name of your map is "CIBmap2048_353.fits", enter "CIBmap2048" as the map name.
 
 cross.py:
 Contains the routine to compute and output Cls of both the masks and the masked maps.
@@ -37,5 +45,5 @@ input for cross-checking purposes.
 
 Files to be added:
 makebeam.py -> It computes beam and window power spectra
-make_spectra.py: It computes CIB and CIBx[external_tracer] power spectra to
-make simulated maps
+make_spectra.py: File to compute theoretical CIB Cls and CIBxexternal_tracer Cls. 
+These can be compared to the output from the main pipeline
