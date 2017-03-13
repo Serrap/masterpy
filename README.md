@@ -48,6 +48,8 @@ Contains the routine to plot output power spectra to be computed with a given
 input for cross-checking purposes.
 
 Files to be added:
-- makebeam.py -> It computes beam and window power spectra
-- make_spectra.py: File to compute theoretical CIB Cls and CIBxexternal_tracer Cls. 
+- makebeam.py
+It computes beam and window power spectra
+- make_spectra.py
+File to compute theoretical CIB Cls and CIBxexternal_tracer Cls. 
 These can be compared to the output from the main pipeline
