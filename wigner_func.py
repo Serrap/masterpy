@@ -15,20 +15,19 @@ def master_wigner3j2(il1, il2, il3, lnwpro):
     l3 = il3 #np.int(il3)
     L = l1 + l2 + l3
     L_2 = L / 2
-    #L_2 = L_2.astype(int)
+    L_2 = L_2.astype(int)
     min = abs(l1 - l2)
     max = l1 + l2
     c = l3 * 0.
     w = np.logical_and(np.logical_and((L_2 * 2 - L) == 0., l3 >= min), l3 <= max)
-    #w = np.logical_and((L_2 * 2 - L) == 0, (l3 >= min), (l3 <= max))
-    #for i in range(len(w)):
-    if w[0] == True:
-        lnw1 = lnwpro[L_2[0] - l1]
-        lnw2 = lnwpro[L_2[0] - l2]
-        lnw3 = lnwpro[L_2[0] - l3[0]]
-        lnwl = lnwpro[L_2[0]]
-        lnc = - math.log(L[0] + 1.0) - lnwl + lnw1 + lnw2 + lnw3
-        c = math.exp(lnc)
+    good = np.where(w == True)[0]
+    if len(w[good]) > 0:
+        lnw1 = lnwpro[L_2[good] - l1]
+        lnw2 = lnwpro[L_2[good] - l2]
+        lnw3 = lnwpro[L_2[good] - l3[good]]
+        lnwl = lnwpro[L_2[good]]
+        lnc = - np.log(L[good] + 1.0) - lnwl + lnw1 + lnw2 + lnw3
+        c[good] = np.exp(lnc)
     return c
 
 def master_make_pq(delta, lmax):
