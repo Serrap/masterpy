@@ -49,9 +49,8 @@ given resolution Delta. Output files are created in /RESULTS/
 Contains the routine to plot output power spectra to be computed with a given
 input for cross-checking purposes.
 
-- masterpy.tgz
-
-.tgz file with all files and directories.
+- masterpy.tgz 
+file with all python files, beams used and directories.
 
 Files to be added:
 - makebeam.py
