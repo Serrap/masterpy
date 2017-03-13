@@ -1,6 +1,6 @@
 """
 Program to read the input maps and masks, 
-exclude the bad values and cross-correlate 
+exclude bad values and cross-correlate 
 both maps and masks. The outputs files are  
 power spectra of the masks and 
 power spectra of masked maps
