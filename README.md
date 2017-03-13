@@ -15,7 +15,9 @@ Files:
 
 - compute_cls.py:
 Main, interactive file to run the pipeline in python3 
-but it's easy to make it compatible with python2.7.
+(it's easy to make it compatible with python2.7). This is the only file 
+you need to run in principle, and it calls all functions in the other files.
+
 The code asks if you want to compute auto- or cross-power spectra.
 If the option 'auto' is selected it computes CIB auto-spectra from maps at 353, 545, 857 GHz.
 Selecting the option 'cross', it computes cross-spectra between the 3 CIB maps and
@@ -46,6 +48,9 @@ given resolution Delta. Output files are created in /RESULTS/
 - plot.py
 Contains the routine to plot output power spectra to be computed with a given
 input for cross-checking purposes.
+
+- masterpy.tgz
+.tgz file with all files and directories.
 
 Files to be added:
 - makebeam.py
