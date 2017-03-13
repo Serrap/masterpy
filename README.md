@@ -2,7 +2,9 @@
 Pipeline to estimate angular power spectra of temperature fluctuations 
 on a limited sky-area of Healpix maps. Based on the Monte Carlo 
 Apodized Spherical Transform EstomatoR (MASTER), 
-Hivon et al. (2001), see: https://arxiv.org/pdf/astro-ph/0105302.pdf
+Hivon et al. (2001), see: 
+https://arxiv.org/pdf/astro-ph/0105302.pdf
+
 It is based on a spherical harmonic transform of the un-masked map.
 
 - Data files (input maps, masks, beams) must be in /data/
