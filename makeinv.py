@@ -1,3 +1,7 @@
+'''
+Function to compute the Mll' matrix and invert it
+'''
+
 import numpy as np
 import healpy as hp
 import math
@@ -31,7 +35,7 @@ def inv(lmax, freq, delta, beam):
 
         for l2 in range(nellm):
             m[:,l2] *= (2.0 * ellm[l2] + 1.0) / (4. * math.pi) * pxw[l2]**2
-        
+# binning the power spectra, see Hivon++ eqs. 20-21  
         matp, matq, lbins = wigner_func.master_make_pq(delta, lmax)
         matbin = np.zeros([len(lbins), len(lbins)])
         matbin = np.dot(np.dot(matp, m), matq)
