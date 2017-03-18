@@ -8,6 +8,8 @@ import pdb
 import plot
 
 lmax = int(input("What lmax ? "))
+if lmax % 2 != 0:
+    raise RuntimeError("lmax must be multiple of 2!")
 Delta_bin = int(input("Which l-Delta_bin for the output spectra (ex: 32, 64, 128...)? "))
 if type(lmax / Delta_bin) != int:
     raise RuntimeError("lmax must be multiple of Delta!")
