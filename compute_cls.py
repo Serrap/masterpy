@@ -11,7 +11,7 @@ lmax = int(input("What lmax ? "))
 if lmax % 2 != 0:
     raise RuntimeError("lmax must be multiple of 2!")
 Delta_bin = int(input("Which l-Delta_bin for the output spectra (ex: 32, 64, 128...)? "))
-if type(lmax / Delta_bin) != int:
+if lmax % Delta_bin != 0:
     raise RuntimeError("lmax must be multiple of Delta!")
 freqs = ["353", "545", "857"]
 in_map = input("Name of input map (no freq nor .fits extension, ex: 'input_map' or 'CIBmap2048'): ")
